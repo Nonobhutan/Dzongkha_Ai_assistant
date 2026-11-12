@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f4f1e8">
+    <title>Dzongkha Companion</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v=friend1">
+</head>
+<body>
+    <div class="app-shell">
+        <aside class="sidebar" id="sidebar" aria-label="Conversation menu">
+            <div class="brand-block">
+                <div class="brand-emblem" aria-hidden="true">འབྲུག</div>
+                <div class="brand-name">
+                    <strong>Dzongkha Companion</strong>
+                    <span>རྫོང་ཁའི་ལས་རོགས།</span>
+                </div>
+                <button class="close-sidebar icon-button" id="close-sidebar" type="button" aria-label="Close menu">×</button>
+            </div>
+
+            <button class="new-chat" id="new-chat-btn" type="button">
+                <span class="plus">＋</span>
+                <span>Start a new chat</span>
+            </button>
+
+            <div class="sidebar-section-title">YOUR CONVERSATIONS</div>
+            <nav class="history-list" id="chat-history" aria-label="Saved conversations">
+                <p class="empty-history" id="history-empty">Your conversations will appear here.</p>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <div class="privacy-card">
+                    <span class="privacy-symbol">◈</span>
+                    <div>
+                        <strong>Private and local</strong>
+                        <p>Chats are saved in this browser.</p>
+                    </div>
+                </div>
+                <button class="clear-history" id="clear-history-btn" type="button">Clear conversation history</button>
+            </div>
+        </aside>
+
+        <div class="mobile-scrim" id="mobile-scrim"></div>
+
+        <main class="main-area">
+            <header class="topbar">
+                <div class="topbar-start">
+                    <button class="menu-button icon-button" id="menu-toggle" type="button" aria-label="Open menu">☰</button>
+                    <div class="page-label">
+                        <span class="eyebrow">YOUR LANGUAGE, YOUR ASSISTANT</span>
+                        <strong>Dzongkha Companion</strong>
+                    </div>
+                </div>
+                <div class="language-chip"><span class="online-dot"></span> English <i>↔</i> Dzongkha</div>
+            </header>
+
+            <section class="workspace" id="conversation-area">
+                <div class="welcome" id="welcome-screen">
+                    <div class="welcome-mark" aria-hidden="true"><span>ཀ</span><span>ཁ</span><span>ག</span></div>
+                    <div class="welcome-kicker">KU ZU ZANG PO LA</div>
+                    <h1>What would you like<br><em>to explore today?</em></h1>
+                    <p class="welcome-copy">Ask in English or Dzongkha. Your assistant will reply in Dzongkha.</p>
+
+                    <div class="prompt-heading">A LITTLE INSPIRATION</div>
+                    <div class="prompt-grid">
+                        <button class="prompt-card" type="button" data-prompt="Explain artificial intelligence in simple words.">
+                            <span class="prompt-icon icon-sun">✳</span>
+                            <span class="prompt-text"><strong>Discover AI</strong><small>Understand artificial intelligence</small></span>
+                            <span class="prompt-arrow">↗</span>
+                        </button>
+                        <button class="prompt-card" type="button" data-prompt="Tell me about the culture and traditions of Bhutan.">
+                            <span class="prompt-icon icon-flower">❋</span>
+                            <span class="prompt-text"><strong>Explore Bhutan</strong><small>Culture, traditions and heritage</small></span>
+                            <span class="prompt-arrow">↗</span>
+                        </button>
+                        <button class="prompt-card" type="button" data-prompt="Help me learn the basics of Python programming.">
+                            <span class="prompt-icon icon-code">&lt;/&gt;</span>
+                            <span class="prompt-text"><strong>Learn coding</strong><small>Start with Python basics</small></span>
+                            <span class="prompt-arrow">↗</span>
+                        </button>
+                        <button class="prompt-card" type="button" data-prompt="Give me tips for effective studying and time management.">
+                            <span class="prompt-icon icon-book">✎</span>
+                            <span class="prompt-text"><strong>Study smarter</strong><small>Ideas for learning and planning</small></span>
+                            <span class="prompt-arrow">↗</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="messages" id="chat-box" aria-live="polite" aria-label="Chat messages"></div>
+            </section>
+
+            <footer class="composer-area">
+                <form class="composer" id="chat-form">
+                    <label class="sr-only" for="user-input">Write a message in English or Dzongkha</label>
+                    <textarea id="user-input" name="message" rows="1" maxlength="4000" placeholder="Write your question here..." required></textarea>
+                    <div class="composer-bottom">
+                        <span class="composer-note"><span class="note-dot"></span> English or Dzongkha is welcome</span>
+                        <button class="send-button" id="send-btn" type="submit" disabled>
+                            <span>Send</span><span aria-hidden="true">➤</span>
+                        </button>
+                    </div>
+                </form>
+                <p class="disclaimer">AI can make mistakes. Please verify important information.</p>
+            </footer>
+        </main>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}?v=friend1" defer></script>
+</body>
+</html>
